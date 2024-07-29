@@ -24,10 +24,10 @@ clear && clear && clear
 clear;clear;clear
 
 # // Banner
-echo -e "${red}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${green}━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "             » Welcome to Autoscript Installer «       "
 echo -e "     » This Will Quick Setup VPN Server On Your Server «"
-echo -e "${red}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${green}━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
 sleep 2
 
@@ -262,7 +262,7 @@ restart_system(){
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e "\e[32mloading...\e[0m" 
 clear
-izinsc="https://raw.githubusercontent.com/hendrahend/hndx2/iplist"
+izinsc="https://raw.githubusercontent.com/hendrahend/hndx2/main/iplist"
 # USERNAME
 rm -f /usr/bin/user
 username=$(curl $izinsc | grep $MYIP | awk '{print $2}')
@@ -446,7 +446,7 @@ LimitNOFILE=1000000
 WantedBy=multi-user.target
 
 EOF
-print_success "Konfigurasi Packet"
+print_success "Packet Configuration"
 }
 
 function ssh(){
@@ -525,7 +525,7 @@ print_success "Password SSH"
 function udp_mini(){
 clear
 print_install "Installing Service Limit IP & Quota"
-wget -q https://raw.githubusercontent.com/hendrahend/hndx2/config/fv-tunnel && chmod +x fv-tunnel && ./fv-tunnel
+wget -q https://raw.githubusercontent.com/hendrahend/hndx2/main/config/fv-tunnel && chmod +x fv-tunnel && ./fv-tunnel
 
 # // Installing UDP Mini
 mkdir -p /usr/local/kyt/
@@ -574,7 +574,7 @@ print_success "SSHD"
 clear
 function ins_dropbear(){
 clear
-print_install "Menginstall Dropbear"
+print_install "Installing Dropbear"
 # // Installing Dropbear
 apt-get install dropbear -y > /dev/null 2>&1
 wget -q -O /etc/default/dropbear "${REPO}config/dropbear.conf"
@@ -587,7 +587,7 @@ print_success "Dropbear"
 clear
 function ins_vnstat(){
 clear
-print_install "Menginstall Vnstat"
+print_install "Installing Vnstat"
 # setting vnstat
 apt -y install vnstat > /dev/null 2>&1
 /etc/init.d/vnstat restart
@@ -610,7 +610,7 @@ print_success "Vnstat"
 
 function ins_openvpn(){
 clear
-print_install "Menginstall OpenVPN"
+print_install "Installing OpenVPN"
 #OpenVPN
 wget ${REPO}files/openvpn &&  chmod +x openvpn && ./openvpn
 /etc/init.d/openvpn restart
@@ -684,7 +684,7 @@ print_success "Swap 1 G"
 
 function ins_Fail2ban(){
 clear
-print_install "Menginstall Fail2ban"
+print_install "Installing Fail2ban"
 #apt -y install fail2ban > /dev/null 2>&1
 #sudo systemctl enable --now fail2ban
 #/etc/init.d/fail2ban restart
@@ -710,7 +710,7 @@ print_success "Fail2ban"
 
 function ins_epro(){
 clear
-print_install "Menginstall ePro WebSocket Proxy"
+print_install "Installing ePro WebSocket Proxy"
     wget -O /usr/bin/ws "${REPO}files/ws" >/dev/null 2>&1
     wget -O /usr/bin/tun.conf "${REPO}config/tun.conf" >/dev/null 2>&1
     wget -O /etc/systemd/system/ws.service "${REPO}files/ws.service" >/dev/null 2>&1
