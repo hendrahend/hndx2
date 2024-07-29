@@ -27,7 +27,7 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-    wget https://raw.githubusercontent.com/hendrahend/hndx2/menu/menu.zip
+    wget https://raw.githubusercontent.com/hendrahend/hndx2/main/menu/menu.zip
     unzip menu.zip
     chmod +x menu/*
     mv menu/* /usr/local/sbin

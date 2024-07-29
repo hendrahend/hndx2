@@ -10,8 +10,8 @@ echo ""
 #sub=$(</dev/urandom tr -dc a-z0-9 | head -c3)
 read -rp "Input Domain Name. Example ( Namamu21 ): " -e sub
 DOMAIN=hendra-hendriana.my.id
-SUB_DOMAIN=${sub}.hendra-hendriana.my.id
-CF_ID=hendh3565@gmail.com
+SUB_DOMAIN=${sub}.hndx77.live
+CF_ID=xxxx
 CF_KEY=xxxx
 set -euo pipefail
 IP=$(curl -sS ifconfig.me);

@@ -24,10 +24,10 @@ clear && clear && clear
 clear;clear;clear
 
 # // Banner
-echo -e "${green}━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${green}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "             » Welcome to Autoscript Installer «       "
 echo -e "     » This Will Quick Setup VPN Server On Your Server «"
-echo -e "${green}━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${green}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
 sleep 2
 
@@ -194,7 +194,7 @@ function base_package() {
     clear
     ########
     print_install "Installing requirements"
-    apt install zip pwgen openssl netcat socat cron bash-completion -y
+    apt install zip chrony pwgen openssl netcat socat cron bash-completion -y
     apt install figlet -y
     apt update -y
     apt upgrade -y
@@ -315,10 +315,9 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
 <code>Time     :</code><code>$TIMEZONE</code>
 <code>Exp Sc.  :</code><code>$exp</code>
 <code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
-<b>baimkuy࿐</b>
+<b>HNDX VPN</b>
 <code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
-<i>Automatic Notifications From Github</i>
-"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://wa.me/xxx"}]]}' 
+"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://t.me/hndx77"}]]}' 
 
     curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
@@ -685,10 +684,10 @@ print_success "Swap 1 G"
 function ins_Fail2ban(){
 clear
 print_install "Installing Fail2ban"
-#apt -y install fail2ban > /dev/null 2>&1
-#sudo systemctl enable --now fail2ban
-#/etc/init.d/fail2ban restart
-#/etc/init.d/fail2ban status
+apt -y install fail2ban > /dev/null 2>&1
+sudo systemctl enable --now fail2ban
+/etc/init.d/fail2ban restart
+/etc/init.d/fail2ban status
 
 # Instal DDOS Flate
 if [ -d '/usr/local/ddos' ]; then
@@ -711,12 +710,12 @@ print_success "Fail2ban"
 function ins_epro(){
 clear
 print_install "Installing ePro WebSocket Proxy"
-    wget -O /usr/bin/ws "${REPO}files/ws" >/dev/null 2>&1
-    wget -O /usr/bin/tun.conf "${REPO}config/tun.conf" >/dev/null 2>&1
-    wget -O /etc/systemd/system/ws.service "${REPO}files/ws.service" >/dev/null 2>&1
-    chmod +x /etc/systemd/system/ws.service
-    chmod +x /usr/bin/ws
-    chmod 644 /usr/bin/tun.conf
+wget -O /usr/bin/ws "${REPO}files/ws" >/dev/null 2>&1
+wget -O /usr/bin/tun.conf "${REPO}config/tun.conf" >/dev/null 2>&1
+wget -O /etc/systemd/system/ws.service "${REPO}files/ws.service" >/dev/null 2>&1
+chmod +x /etc/systemd/system/ws.service
+chmod +x /usr/bin/ws
+chmod 644 /usr/bin/tun.conf
 systemctl disable ws
 systemctl stop ws
 systemctl enable ws

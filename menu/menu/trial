@@ -20,7 +20,7 @@ grenbo="\e[92;1m"
 ipsaya=$(curl -sS ipv4.icanhazip.com)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/hendrahend/hndx2/iplist"
+data_ip="https://raw.githubusercontent.com/hendrahend/hndx2/main/iplist"
 checking_sc() {
   useexp=$(wget -qO- $data_ip | grep $ipsaya | awk '{print $3}')
   if [[ $date_list < $useexp ]]; then
@@ -33,8 +33,6 @@ checking_sc() {
     echo -e "            ${RED}PERMISSION DENIED !${NC}"
     echo -e "   \033[0;33mYour VPS${NC} $ipsaya \033[0;33mHas been Banned${NC}"
     echo -e "     \033[0;33mBuy access permissions for scripts${NC}"
-    echo -e "             \033[0;33mContact Admin :${NC}"
-    echo -e "      ${GREEN}WhatsApp${NC} wa.me/+6285294609585"
     echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
     exit 0
   fi
@@ -53,7 +51,7 @@ IP=$(curl -sS ipv4.icanhazip.com)
 Login=Trial-`</dev/urandom tr -dc X-Z0-9 | head -c4`
 clear
 echo -e "\033[1;96m___________________________________________\033[0m"
-echo -e "Settings Tittle Triall          "
+echo -e "Settings Title Trial          "
 echo -e "\033[1;96m___________________________________________\033[0m"
 echo -e ""
 echo -e ""

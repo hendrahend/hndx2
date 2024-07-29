@@ -8,7 +8,7 @@ logging.basicConfig(level=logging.INFO)
 uptime = DT.datetime.now()
 
 exec(open("kyt/var.txt","r").read())
-bot = TelegramClient("ddsdswl","6","eb06d4abfb49dc3eeb1aeb98ae0f581e").start(bot_token=BOT_TOKEN)
+bot = TelegramClient("ddsdswl","6","eb06d4abfb49d3eeb1aeb98ae0f581e").start(bot_token=BOT_TOKEN)
 try:
 	open("kyt/database.db")
 except:

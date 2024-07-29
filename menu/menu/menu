@@ -38,7 +38,7 @@ SERONLINE=$(uptime -p | cut -d " " -f 2-10000)
 clear
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo ""
-izinsc="https://raw.githubusercontent.com/hendrahend/hndx2/iplist"
+izinsc="https://raw.githubusercontent.com/hendrahend/hndx2/main/iplist"
 # USERNAME
 rm -f /usr/bin/user
 username=$(curl ${izinsc} | grep $MYIP | awk '{print $2}')
@@ -168,7 +168,7 @@ bwhite='\033[1;37m'
 clear
 echo -e " "                                                           
 echo -e " ${NC} ╭════════════════════════════════════════════════════════════════╮"
-echo -e " ${NC} │${bwhite}\033[41m                Script Premium By HNDX VPN             ${NC}│"
+echo -e " ${NC} │${bwhite}\033[41m                Script Premium By HNDX VPN                 ${NC}│"
 echo -e " ${NC} ╰════════════════════════════════════════════════════════════════╯"
 echo -e " ${NC} ╭════════════════════════════════════════════════════════════════╮"
 echo -e " ${NC} │$BRED ● ${bblue}SYSTEM OS ${YELL}   = ${NC}$MODEL${NC}"
@@ -256,7 +256,7 @@ m-bot
 ;;
 11)
 clear
-wget -q https://raw.githubusercontent.com/hendrahend/hndx2/update.sh
+wget -q https://raw.githubusercontent.com/hendrahend/hndx2/main/update.sh
 chmod +x update.sh
 ./update.sh
 ;;
@@ -290,7 +290,7 @@ speedtest
 ;;
 19) 
 clear ;
-wget https://raw.githubusercontent.com/Baimkuy/udpcustom/main/udp-custom.sh && chmod +x udp-custom.sh && ./udp-custom.sh && reboot
+wget https://raw.githubusercontent.com/hendrahend/hndx2/main/files/udp-custom.sh && chmod +x udp-custom.sh && ./udp-custom.sh && reboot
 ;;
 20) 
 clear;
