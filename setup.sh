@@ -79,7 +79,7 @@ apt install ruby -y
 gem install lolcat
 apt install wondershaper -y
 clear
-REPO="https://raw.githubusercontent.com/hendrahend/hndx2"
+REPO="https://raw.githubusercontent.com/hendrahend/hndx2/main/"
 start=$(date +%s)
 secs_to_human() {
     echo "Installation time : $((${1} / 3600)) hours $(((${1} / 60) % 60)) minute's $((${1} % 60)) seconds"
