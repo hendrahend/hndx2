@@ -108,45 +108,45 @@ nginx_service=$(systemctl status nginx | grep Active | awk '{print $3}' | cut -d
 clear
 # STATUS SERVICE  SSH 
 if [[ $ssh_service == "running" ]]; then 
-   status_ssh="🟢"
+   status_ssh="🟢 ON"
 else
-   status_ssh="🔴"
+   status_ssh="🔴 OFF"
 fi
 
 # // SSH Websocket Proxy
 ssh_ws=$( systemctl status ws | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
 if [[ $ssh_ws == "running" ]]; then
-    status_ws_epro="🟢"
+    status_ws_epro="🟢 ON"
 else
-    status_ws_epro="🔴"
+    status_ws_epro="🔴 OFF"
 fi
 
 # STATUS SERVICE HAPROXY
 if [[ $haproxy_service == "running" ]]; then 
-   status_haproxy="🟢"
+   status_haproxy="🟢 ON"
 else
-   status_haproxy="🔴"
+   status_haproxy="🔴 OFF"
 fi
 
 # STATUS SERVICE XRAY
 if [[ $xray_service == "running" ]]; then 
-   status_xray="🟢"
+   status_xray="🟢ON"
 else
-   status_xray="🔴"
+   status_xray="🔴 OFF"
 fi
 
 # STATUS SERVICE NGINX
 if [[ $nginx_service == "running" ]]; then 
-   status_nginx="🟢"
+   status_nginx="🟢 ON"
 else
-   status_nginx="🔴"
+   status_nginx="🔴 OFF"
 fi
 
 # STATUS SERVICE Dropbear
 if [[ $dropbear_service == "running" ]]; then 
-   status_dropbear="🟢"
+   status_dropbear="🟢 ON"
 else
-   status_dropbear="🔴"
+   status_dropbear="🔴 OFF"
 fi
 # //
 # // Log account
@@ -168,26 +168,26 @@ bwhite='\033[1;37m'
 clear
 echo -e " "                                                           
 echo -e " ${NC} ╭════════════════════════════════════════════════════════════════╮"
-echo -e " ${NC} │${bwhite}\033[41m                Script Premium By HNDX VPN                 ${NC}│"
+echo -e " ${NC} │${bwhite}\033[41m                      PREMIUM SCRIPT HNDX VPN                   ${NC}│"
 echo -e " ${NC} ╰════════════════════════════════════════════════════════════════╯"
 echo -e " ${NC} ╭════════════════════════════════════════════════════════════════╮"
-echo -e " ${NC} │$BRED ● ${bblue}SYSTEM OS ${YELL}   = ${NC}$MODEL${NC}"
-echo -e " ${NC} │$BRED ● ${bblue}SERVER RAM ${YELL}  = ${NC}$tram / $uram MB $NC"
-echo -e " ${NC} │$BRED ● ${bblue}DATE ${YELL}        = ${NC}$DATEVPS${NC}"
-echo -e " ${NC} │$BRED ● ${bblue}TIME ${YELL}        = ${NC}$TIMEZONE${NC}"
-echo -e " ${NC} │$BRED ● ${bblue}UPTIME ${YELL}      = ${NC}$SERONLINE${NC}"
-echo -e " ${NC} │$BRED ● ${bblue}IP VPS ${YELL}      = ${BRED}$IPVPS${NC}"
-echo -e " ${NC} │$BRED ● ${bblue}DOMAIN ${YELL}      = ${green}$domain${NC}"
+echo -e " ${NC} │$BRED ● ${bblue}SYSTEM OS ${YELL}   =   ${NC}$MODEL${NC}"
+echo -e " ${NC} │$BRED ● ${bblue}SERVER RAM ${YELL}  =   ${NC}$tram / $uram MB $NC"
+echo -e " ${NC} │$BRED ● ${bblue}DATE ${YELL}        =   ${NC}$DATEVPS${NC}"
+echo -e " ${NC} │$BRED ● ${bblue}TIME ${YELL}        =   ${NC}$TIMEZONE${NC}"
+echo -e " ${NC} │$BRED ● ${bblue}UPTIME ${YELL}      =   ${NC}$SERONLINE${NC}"
+echo -e " ${NC} │$BRED ● ${bblue}IP VPS ${YELL}      =   ${BRED}$IPVPS${NC}"
+echo -e " ${NC} │$BRED ● ${bblue}DOMAIN ${YELL}      =   ${green}$domain${NC}"
 echo -e " ${NC} ╰════════════════════════════════════════════════════════════════╯$NC"
-echo -e " ${NC}                     >>> INFORMATION ACCOUNT <<<"
+echo -e " ${NC}                     >>> ACCOUNT INFORMATION <<<"
 echo -e " ${NC}         ══════════════════════════════════════════════════${NC}"
-echo -e "               ${BRED} SSH/OPENVPN/UDP  $YELL=$NC $ssh1  ${YELL}$a"
+echo -e "               ${YELL} SSH/OPENVPN/UDP  $YELL=$NC $ssh1  ${YELL}$a"
 echo -e "               ${BRED} VMESS/WS/GRPC    $YELL=$NC $vma  ${YELL}$a"
 echo -e "               ${BRED} VLESS/WS/GRPC    $YELL=$NC $vla  ${YELL}$a"
 echo -e "               ${BRED} TROJAN/WS/GRPC   $YELL=$NC $trb  ${YELL}$a"
 echo -e "               ${BRED} SHADOW/WS/GRPC   $YELL=$NC $ssa  ${YELL}$a"
 echo -e " ${NC}         ══════════════════════════════════════════════════${NC}" 
-echo -e " ${NC}                  >>> Staus <<<"
+echo -e " ${NC}                       >>> SERVICE STATUS <<<"
 echo -e " ${NC} ╭════════════════════╮╭════════════════════╮╭════════════════════╮$NC"
 echo -e " ${NC} │$bblue SSH     $status_ssh           $bblue NGINX $status_nginx             $bblue HAPROXY  $status_haproxy        ${NC}│"
 echo -e " ${NC} │$bblue WS-ePro $status_ws_epro           $bblue XRAY  $status_xray             $bblue DROPBEAR $status_dropbear        ${NC}│"
@@ -196,7 +196,7 @@ echo -e " ${NC} ╭════════════════════�
 echo -e " ${NC} │$NC [${BRED}01$NC]${YELL} SSH MENU     $NC│ [${BRED}07$NC]${YELL} BCKP/RSTR     $NC│ [${BRED}13$NC]${YELL} BACKUP BOT       ${NC}│"
 echo -e " ${NC} │$NC [${BRED}02$NC]${YELL} VMESS MENU   $NC│ [${BRED}08$NC]${YELL} GOTOP X RAM   $NC│ [${BRED}14$NC]${YELL} CHANGE DOMAIN    ${NC}│"    
 echo -e " ${NC} │$NC [${BRED}03$NC]${YELL} VLESS MENU   $NC│ [${BRED}09$NC]${YELL} RESTART ALL   $NC│ [${BRED}15$NC]${YELL} FIX CRT DOMAIN   ${NC}│"   
-echo -e " ${NC} │$NC [${BRED}04$NC]${YELL} TROJAN MENU  $NC│ [${BRED}10$NC]${YELL} TELE BOT      $NC│ [${BRED}16$NC]${YELL} CLEAR CHACHE     ${NC}│" 
+echo -e " ${NC} │$NC [${BRED}04$NC]${YELL} TROJAN MENU  $NC│ [${BRED}10$NC]${YELL} TELE BOT      $NC│ [${BRED}16$NC]${YELL} CLEAR CACHE      ${NC}│" 
 echo -e " ${NC} │$NC [${BRED}05$NC]${YELL} SS - LIBEV   $NC│ [${BRED}11$NC]${YELL} UPDATE SCRIPT $NC│ [${BRED}17$NC]${YELL} CREATE SLOW DNS  ${NC}│"
 echo -e " ${NC} │$NC [${BRED}06$NC]${YELL} TRIAL ACC    $NC│ [${BRED}12$NC]${YELL} RUNNING       $NC│ [${BRED}18$NC]${YELL} SPEEDTEST        ${NC}│"
 echo -e " ${NC} │                                                                ${NC}│"
@@ -204,10 +204,10 @@ echo -e " ${NC} │$NC [${BRED}19$NC]${YELL} INSTALL UDP                        
 echo -e " ${NC} │$NC [${BRED}20$NC]${YELL} CHANGE BANNER                                             ${NC}│"
 echo -e " ${NC} ╰════════════════════════════════════════════════════════════════╯"
 echo -e " ${NC} ╭════════════════════════════════════════════════════════════════╮"
-echo -e " ${NC} │$bblue Script Version $YELL=$NC V2.1"
-echo -e " ${NC} │$bblue Script Status  $YELL=$NC $sts"
-echo -e " ${NC} │$bblue Username       $YELL=$green $username "
-echo -e " ${NC} │$bblue Expiry Script  $YELL=$NC $exp ${NC}/$green $certifacate ${NC}Days"
+echo -e " ${NC} │$bblue Script Version $YELL =  $NC V2.1"
+echo -e " ${NC} │$bblue Script Status  $YELL =  $NC $sts"
+echo -e " ${NC} │$bblue Username       $YELL =  $green $username "
+echo -e " ${NC} │$bblue Expiry Script  $YELL =  $NC $exp ${NC}/$green $certifacate ${NC}Days"
 echo -e " ${NC} ╰════════════════════════════════════════════════════════════════╯"
 echo -e " "
 read -p "  Options [ 1 / 20 ] ❱❱❱ " opt
